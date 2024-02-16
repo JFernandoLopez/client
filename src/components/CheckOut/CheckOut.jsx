@@ -21,7 +21,7 @@ const CheckOut = () => {
             const myId = filtred[0]
             setCheckOut({...checkOut, id: myId?.id})
         }
-    }, [])
+    }, [rooms])
 
     const finishCheckOut = async (event) => {
         event.preventDefault();
@@ -37,6 +37,7 @@ const CheckOut = () => {
 
     return(
         <div className="form">
+            <h1>Check Out</h1>
             <form onSubmit={finishCheckOut}>
                 <select name='id' onChange={handleChange}>
                 {rooms?.sort((a, b)=> {

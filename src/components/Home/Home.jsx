@@ -37,8 +37,8 @@ const Rooms = () => {
                 {rooms?.map((room) => {
                     return (
                     <tr key={room.id}>
-                        <td>{!room.status ? <Link to='/form'><button onClick={() => giveMeUserRoom(room.id)}>{room.id}</button></Link> :
-                        <Link to='/checkOut'><button onClick={() => giveMeUserRoom(room.id)}>{room.id}</button></Link>}</td>
+                        <td>{!room.status ? <Link to='/form'><button>{room.id}</button></Link> :
+                        <Link to={'/checkOut'}><button>{room.id}</button></Link>}</td>
                         <td>{room.type}</td>
                         <td>{room.floor}</td>
                         <td>{room.price}</td>
