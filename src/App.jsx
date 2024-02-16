@@ -2,24 +2,19 @@ import { Link } from 'react-router-dom';
 import './App.css'
 import { Routes, Route } from 'react-router';
 import Rooms from './components/Home/Home';
+import Nav from './components/Nav/Nav';
+import Users from './components/Users/Users';
 
 function App() {
 
   return (
     <div>
-      <nav>
-        <ul>
-          <li><Link to='/'>Home</Link></li>
-          <li><Link to='/users'>Users</Link></li>
-          <li><Link to='/form'>Check-In</Link></li>
-          <li><Link to='/check-out'>Check-Out</Link></li>
-        </ul>
-      </nav>
+      <Nav/>
       <Routes>
         <Route path='/' element={<Rooms/>}></Route> 
-        <Route path='/users'></Route> 
+        <Route path='/users' element={<Users/>}></Route> 
         <Route path='/form'></Route> 
-        <Route path='/check-out'></Route> 
+        <Route path='/checkOut'></Route> 
       </Routes>    
       </div>
   )
