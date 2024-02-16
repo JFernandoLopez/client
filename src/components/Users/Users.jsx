@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { getUsers } from "../../redux/actions"
+import { Link } from 'react-router-dom'
 
 const Users = () => {
     const users = useSelector((state) => state.users)
@@ -30,7 +31,8 @@ const Users = () => {
                 {users?.map((user) => {
                     return (
                     <tr key={user.id}>
-                        <td><button>{user.id}</button></td>
+                        <td>{!user.RoomId ? <button><Link to='/form'>{user.id}</Link></button> :
+                        <button><Link to='/checkOut'>{user.id}</Link></button>}</td>
                         <td>{user.name}</td>
                         <td>{user.email}</td>
                         <td>{user.identityCard}</td>

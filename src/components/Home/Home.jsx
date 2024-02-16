@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { useEffect } from 'react'
 import { getRooms } from '../../redux/actions';
+import { Link } from 'react-router-dom';
 
 const Rooms = () => {
     const dispatch = useDispatch();
@@ -9,6 +10,12 @@ const Rooms = () => {
     useEffect(() => {
         dispatch(getRooms());
     }, [])
+
+    const consideration = (room) => {
+        if(!room.status){
+            <button><Link to='/form'>{room.id}</Link></button>
+        }
+    }
 
     return(
         <div>
@@ -30,7 +37,8 @@ const Rooms = () => {
                 {rooms?.map((room) => {
                     return (
                     <tr key={room.id}>
-                        <td><button>{room.id}</button></td>
+                        <td>{!room.status ? <button><Link to='/form'>{room.id}</Link></button> :
+                        <button><Link to='/checkOut'>{room.id}</Link></button>}</td>
                         <td>{room.type}</td>
                         <td>{room.floor}</td>
                         <td>{room.price}</td>
