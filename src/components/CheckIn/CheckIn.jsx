@@ -1,15 +1,16 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
+import { getRooms } from '../../redux/actions';
 import './checkIn.css'
 import axios from 'axios';
 
 const CheckIn = () => {
-    const {user} = useSelector((state) => state)
     const {rooms} = useSelector((state) => state)
     const filtred = rooms?.filter((room) => !room.status)
+    const dispatch = useDispatch();
     const [information, setInformation] = useState({
-        name: user?.name || "",
-        id: ""
+        name: "",
+        id:  filtred[0]?.id || ""
     })
 
     useEffect(() => {
@@ -17,7 +18,7 @@ const CheckIn = () => {
             const myId = filtred[0]
             setInformation({...information, id: myId?.id})
         }
-    }, [])
+    }, [rooms])
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -26,15 +27,18 @@ const CheckIn = () => {
     }
 
     const submitCheckIn = (event) => {
+        event.preventDefault()
         try {
             axios.put('http://localhost:3001/check-in', information)
-            alert('Check-in successful');
-            document.getElementsByName('name').value = "";
-            document.getElementsByName('id').value = "";
-            dispatch(getRooms());
+            .then(() => {
+                document.getElementsByName('name').value = ""
+                document.getElementsByName('id').value = ""
+                dispatch(getRooms())
+                alert('Check-in successful')
+            }).catch((error) => alert('User Has a Room'))
         } catch (error) {
             console.log(error)
-            alert('Something went wrong, please try again.')
+            alert('Please try again')
         }
     }
 
@@ -43,7 +47,7 @@ const CheckIn = () => {
             <h1>Check In</h1>
             <form onSubmit={submitCheckIn}>
                 <label htmlFor="name">Name</label>
-                <input type='text' name='name' onChange={handleChange} value={information.name} minlength='3' required/>
+                <input type='text' name='name' onChange={handleChange} value={information.name} minLength='3' required/>
 
                 <label htmlFor='id'>id Room</label>
                 <select name='id' onChange={handleChange}>

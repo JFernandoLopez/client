@@ -5,10 +5,11 @@ import { getRoom, getRooms, getUser } from "../../redux/actions";
 
 const CheckOut = () => {
     const dispatch = useDispatch()
-    const [checkOut, setCheckOut] = useState({
-        id: "",
-    })
     const {rooms} = useSelector((state) => state)
+    const filtred = rooms?.filter((room) => room.status)
+    const [checkOut, setCheckOut] = useState({
+        id: filtred[0]?.id || "",
+    })
 
     const handleChange = (event) => {
         const { name, value } = event.target;
