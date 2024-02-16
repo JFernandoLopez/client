@@ -1,8 +1,27 @@
-# React + Vite
+# Instrucciones de Configuración
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Clonar el Repositorio Client
 
-Currently, two official plugins are available:
+1. Clona este repositorio a tu máquina local usando el siguiente comando:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+git clone <url_del_repositorio>
+
+## Antes de continuar Instalar el proyecto Server que alimenta este proyecto:
+
+2. Clonar e instalar dependencias del siguiente repositorio:
+
+https://github.com/JFernandoLopez/client
+
+## Instalar dependencias 
+
+3. Instalamos las dependencias necesarias haciendo uso de la consola en la ubicación de la carpeta client:
+
+npm install
+
+## Ejecutar el proyecto:
+
+4. Levantamos el proyecto y lo probamos en el navegador:
+
+npm run dev
+
+¡Listo! Ahora tu cliente debería estar en funcionamiento correctamente.
