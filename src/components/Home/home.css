@@ -1,0 +1,52 @@
+div.rooms{
+    display: flex;
+    margin-top: 40px;
+}
+
+table.rooms{
+    padding-left: 40px;
+    padding-right: 40px;
+    text-align: center;
+}
+
+thead tr{
+    margin-top: 10px;
+    padding-top: 10px;
+    border-style: solid;
+}
+
+td{
+    border-style: solid;
+    border-color: rgba(96, 88, 86, 0.411);
+    transition: background-color 1s linear;
+}
+
+td:hover{
+    background-color: rgba(39, 65, 86, 0.411);
+}
+
+td.rooms{
+    padding: 0;
+    margin: 0;
+    transition: background-color 1s ease-in-out;
+}
+
+td.rooms:hover{
+    padding: 0;
+    margin: 0;
+    background-color: rgba(96, 88, 86, 0.411);
+}
+
+button.rooms{
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 0;
+    transition: background-color 0.5s ease-in-out, color 1s ease;
+}
+
+button.rooms:hover{
+    background-color: rgba(96, 88, 86, 0.411);
+    color: black;
+    border-color: black;
+}

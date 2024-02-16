@@ -46,11 +46,11 @@ const CheckIn = () => {
         <div className="form">
             <h1>Check In</h1>
             <form onSubmit={submitCheckIn}>
-                <label htmlFor="name">Name</label>
-                <input type='text' name='name' onChange={handleChange} value={information.name} minLength='3' required/>
+                <label className='form' htmlFor="name">Name</label>
+                <input className='form' type='text' name='name' onChange={handleChange} value={information.name} minLength='3' required/>
 
-                <label htmlFor='id'>id Room</label>
-                <select name='id' onChange={handleChange}>
+                <label className='form' htmlFor='id'>id Room</label>
+                <select className='form' name='id' onChange={handleChange}>
                     {rooms?.sort((a, b)=> {
                         return a.id - b.id
                     }).map((room) => {
@@ -60,7 +60,7 @@ const CheckIn = () => {
                     })}
                 </select>
 
-                <input type='submit' value='Check In'/>
+                <input className='formButoon' type='submit' value='Check In'/>
             </form>
         </div>
     )

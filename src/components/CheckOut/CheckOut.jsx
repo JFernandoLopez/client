@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
 import { useDispatch, useSelector } from "react-redux";
-import { getRoom, getRooms, getUser } from "../../redux/actions";
+import { getRooms } from "../../redux/actions";
+import './checkOut.css'
 
 const CheckOut = () => {
     const dispatch = useDispatch()
@@ -40,7 +41,7 @@ const CheckOut = () => {
         <div className="form">
             <h1>Check Out</h1>
             <form onSubmit={finishCheckOut}>
-                <select name='id' onChange={handleChange}>
+                <select className='formCheckOut'name='id' onChange={handleChange}>
                 {rooms?.sort((a, b)=> {
                     return a.id - b.id
                 }).map((room) => {
@@ -49,9 +50,9 @@ const CheckOut = () => {
                     }
                 })}
                 </select>
-                <label htmlFor="id">#Room</label>
+                <label className='formCheckOut'htmlFor="id">#Room</label>
 
-                <input type="submit" value='Check Out'/>
+                <input className='formCheckOutSubit'type="submit" value='Check Out'/>
 
             </form>
         </div>

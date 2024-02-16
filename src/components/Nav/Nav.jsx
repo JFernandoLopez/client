@@ -13,10 +13,10 @@ return(
     <div className='nvb'>
         <nav>
             <ul className="navbar">
-            <li><Link to='/'><button onClick={handleErase}>Home</button></Link></li>
-            <li><Link to='/users'><button onClick={handleErase}>Users</button></Link></li>
-            <li><Link to='/form'><button onClick={handleErase}>Check-In</button></Link></li>
-            <li><Link to='/checkOut'><button onClick={handleErase}>Check-Out</button></Link></li>
+            <li><Link to='/'><button className='Navigators' onClick={handleErase}>Home</button></Link></li>
+            <li><Link to='/users'><button className='Navigators' onClick={handleErase}>Users</button></Link></li>
+            <li><Link to='/form'><button className='Navigators' onClick={handleErase}>Check-In</button></Link></li>
+            <li><Link to='/checkOut'><button className='Navigators' onClick={handleErase}>Check-Out</button></Link></li>
             </ul>
         </nav>
     </div>

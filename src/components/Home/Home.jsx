@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useEffect } from 'react'
 import { getRooms } from '../../redux/actions';
 import { Link } from 'react-router-dom';
-import { getRoom } from '../../redux/actions';
+import './home.css'
 
 const Rooms = () => {
     const dispatch = useDispatch();
@@ -12,32 +12,28 @@ const Rooms = () => {
         dispatch(getRooms());
     }, [])
 
-    const giveMeUserRoom = (id) => {
-        dispatch(getRoom(id));
-    }
-
     return(
-        <div>
-            <table>
+        <div className='rooms'>
+            <table className='rooms'>
                 <thead>
                 <tr>
-                    <th><h1>Rooms</h1></th>
+                    <th><h1 className='rooms'>Rooms</h1></th>
                 </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><h4># Room</h4></td>
-                        <td><h4>Type</h4></td>
-                        <td><h4>Floor</h4></td>
-                        <td><h4>Price</h4></td>
-                        <td><h4>Description</h4></td>
-                        <td><h4>Status</h4></td>
-                        <td><h4>User</h4></td>
+                        <td><h4 className='rooms'># Room</h4></td>
+                        <td><h4 className='rooms'>Type</h4></td>
+                        <td><h4 className='rooms'>Floor</h4></td>
+                        <td><h4 className='rooms'>Price</h4></td>
+                        <td><h4 className='rooms'>Description</h4></td>
+                        <td><h4 className='rooms'>Status</h4></td>
+                        <td><h4 className='rooms'>User</h4></td>
                     </tr>
                 {rooms?.map((room) => {
                     return (
                     <tr key={room.id}>
-                        <td>{!room.status ? <Link to='/form'><button>{room.id}</button></Link> :
+                        <td className='rooms'>{!room.status ? <Link to='/form'><button className='rooms'>{room.id}</button></Link> :
                         <Link to={'/checkOut'}><button>{room.id}</button></Link>}</td>
                         <td>{room.type}</td>
                         <td>{room.floor}</td>
