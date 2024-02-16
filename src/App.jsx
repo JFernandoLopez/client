@@ -7,7 +7,7 @@ import Users from './components/Users/Users';
 
 const CheckIn = React.lazy(() => import('./components/CheckIn/CheckIn'));
 const CheckOut = React.lazy(() => import('./components/CheckOut/CheckOut'));
-const LoadingComponent = () => <div>Loading...</div>;
+const LoadingComponent = () => <div className='Loading'>Loading...</div>;
 
 function App() {
     const { pathname } = useLocation(); // Mueve esta línea dentro de la función App()
@@ -31,8 +31,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Rooms />} />
         <Route path="/users"  element={<Users />} />
-        <Route path='/form' exact element={loadingTimeout ? <LoadingComponent /> : <CheckIn />} />
-        <Route path='/checkOut' exact element={loadingTimeout ? <LoadingComponent /> :<CheckOut />}/>
+        <Route path='/form' exact element={loadingTimeout ? <LoadingComponent/> : <CheckIn />} />
+        <Route path='/checkOut' exact element={loadingTimeout ? <LoadingComponent/> :<CheckOut />}/>
       </Routes>  
       </div>
   )
