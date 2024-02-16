@@ -36,8 +36,8 @@ const Users = () => {
                         <td>{user.name}</td>
                         <td>{user.email}</td>
                         <td>{user.identityCard}</td>
-                        <td>{!user.RoomId ? <p style={{color: 'red'}}>none</p> : <p style={{color: 'green'}}>{user.RoomId}</p>}</td>
-                        <td>{!user.Room ? <p style={{color: 'red'}}>none</p> : <p style={{color: 'green'}}>{user.Room}</p>}</td>
+                        <td>{!user.RoomId ? <p style={{color: 'red'}}>none</p> : <p style={{color: 'green'}}>{user.Room.id}</p>}</td>
+                        <td>{!user.Room ? <p style={{color: 'red'}}>none</p> : <p style={{color: 'green'}}>{user.Room.type}</p>}</td>
                     </tr>
                     )
                 })}

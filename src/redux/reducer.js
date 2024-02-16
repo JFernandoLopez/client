@@ -1,4 +1,4 @@
-import { GET_ALL_ROOMS, GET_ALL_USERS, GET_ROOM_BY_ID, GET_USER_BY_IDCARD, CHECK_IN, CHECK_OUT, CREATE_ROOM, CREATE_USER } from "./action-types";
+import { GET_ALL_ROOMS, GET_ALL_USERS, GET_ROOM_BY_ID, GET_USER_BY_IDCARD, CHECK_IN, CHECK_OUT, CREATE_ROOM, CREATE_USER, CLEAN_USER_ROOM } from "./action-types";
 
 const initialState = {
     rooms: [],
@@ -28,6 +28,12 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 user: action.payload
+            }
+        case CLEAN_USER_ROOM:
+            return {
+                ...state,
+                user: {},
+                room: {},
             }
         default:
             return state;

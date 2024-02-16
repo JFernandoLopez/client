@@ -6,3 +6,4 @@ export const CHECK_IN = 'CHECK_IN';
 export const CHECK_OUT = 'CHECK_OUT';
 export const CREATE_ROOM = 'CREATE_ROOM';
 export const CREATE_USER = 'CREATE_USER';
+export const CLEAN_USER_ROOM = 'CLEAN_USER_ROOM';
